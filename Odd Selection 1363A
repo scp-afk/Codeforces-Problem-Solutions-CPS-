@@ -1,0 +1,32 @@
+#include <bits/stdc++.h>
+#define int long long
+#define pb push_back
+#define write(a,n) for (int i = 0;i < n;i++){cin >> a[i];}
+using namespace std;
+ 
+void solve(){
+    int n,m,k,odd = 0,even = 0;
+    bool ok = 0;
+    cin >> n >> m;
+    for (int i = 0;i < n;i++){
+        cin >> k;
+        if (k % 2) odd++;
+        else even++;
+    }
+    k = 1;
+    while (k <= odd){
+        if (m - k >= 0 && m - k <= even) ok = 1;
+        k += 2;
+    }
+    if (ok) cout << "Yes";
+    else cout << "No";
+}
+ 
+signed main(){
+    int t;
+    cin >> t;
+    while (t--){
+        solve();
+        cout << "\n";
+    }
+}

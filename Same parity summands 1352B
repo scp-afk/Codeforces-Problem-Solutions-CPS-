@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int n,m,k,s;
+    cin >> n;
+    while (n--){
+        cin >> m >> k;
+        if (m >= k){
+            if (m % 2 == 0){
+                if (m / 2 >= k){
+                    cout << "YES\n";
+                    for (int i = 1;i < k;i++){
+                        cout << 2 << " ";
+                    }
+                    cout << m - (k - 1) * 2 << "\n";
+                }
+                else if (k % 2 == 0){
+                    cout << "YES\n";
+                    for(int i = 1;i < k;i++){
+                        cout << 1 << " ";
+                    }
+                    cout << m - k + 1 << "\n";
+                }
+                else cout << "NO\n";
+            }
+            else{
+                if (k % 2 == 1){
+                    cout << "YES\n";
+                    for (int i = 1;i < k;i++){
+                        cout << 1 << " ";
+                    }
+                    cout << m - k + 1 << "\n";
+                }
+                else cout << "NO\n";
+            }
+        }
+        else cout << "NO\n";
+    }
+}

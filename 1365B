@@ -1,0 +1,34 @@
+#include <bits/stdc++.h>
+#define int long long
+#define write(a,n) for (int i = 0;i < n;i++){cin >> a[i];}
+#define all(x) x.begin(),x.end()
+#define rall(x) x.rbegin(),x.rend()
+using namespace std;
+
+void solve(){
+    int n,m,k,s;
+    bool h0 = 0,h1 = 0,st = 1;
+    cin >> n;vector<int>a(n);
+    for (int i = 0;i < n;i++){
+        cin >> a[i];
+        if (i > 0 && a[i] < a[i - 1]) st = 0;
+    }
+    for (int i = 0;i < n;i++){
+        cin >> m;
+        if (!m) h0 = 1;
+        else h1 = 1;
+    }
+    if (h0 && h1) cout << "Yes";
+    else if (st) cout << "Yes";
+    else cout << "No";
+    
+}
+
+signed main(){
+    int t;
+    cin >> t;
+    while (t--){
+        solve();
+        cout << "\n";
+    }
+}

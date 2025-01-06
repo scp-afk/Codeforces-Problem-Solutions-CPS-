@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+#define int long long
+#define write(a,n) for(int i = 0;i < n;i++){cin >> a[i];}
+#define pb push_back
+#define all(x) x.begin(),x.end()
+#define rall(x) x.rbegin(),x.rend()
+using namespace std;
+
+int f(int x){
+    return x * (x - 1) / 2;
+}
+
+void solve(){
+    int n,m,k,s,sum1=0,sum2=0;
+    cin >> n >> m;
+    if (m == 1) cout << f(n) << " " << f(n);
+    else{
+        k = n / m;
+        sum1 += (n % m) * f(k + 1) + (m - n % m) * f(k);
+        sum2 = f(n - m + 1);
+        cout << sum1 << " " << sum2;
+    }
+}
+
+signed main(){
+    int t = 1; 
+    while (t--){
+        solve();
+        cout << "\n";
+    }
+}
